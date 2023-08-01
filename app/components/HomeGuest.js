@@ -120,6 +120,9 @@ function HomeGuest() {
   const [state, dispatch] = useImmerReducer(ourReducer, initialState);
 
   useEffect(() => {
+    appDispatch({ type: 'flashMessage', value: 'Hello!' });
+  }, []);
+  useEffect(() => {
     if (state.username.value) {
       const delay = setTimeout(
         () => dispatch({ type: 'usernameAfterDelay' }),

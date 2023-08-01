@@ -89,7 +89,7 @@ function EditPost() {
         const response = await Axios.get(`/post/${state.id}`);
         if (response.data) {
           dispatch({ type: 'fetchComplete', value: response.data });
-          if (appState.user.username !== response.data.auther.username) {
+          if (appState.user.username !== response.data.author.username) {
             appDispatch({
               type: 'flashMessage',
               value: 'You do not have permission to edit that post',
